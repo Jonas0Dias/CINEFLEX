@@ -2,44 +2,28 @@ import styled from "styled-components";
 import axios from "axios";
 import Movies from "./Movies"
 import movieslist from "./Movies"
+import React from 'react'
 let listafilmes=[]
 let i=0
 export default function ScreenMovies(props) {
-    console.log(props)
     
-    const filmes=axios.get('https://mock-api.driven.com.br/api/v8/cineflex/movies');
-    filmes.then((resposta) => {
-
-        resposta.data.map( (c) => {
-            props.setMovieImage(listafilmes)
-            listafilmes.push(c.posterURL)
-
-        })
-        
-    }
+    React.useEffect(() => {
+		const filmes=axios.get('https://mock-api.driven.com.br/api/v8/cineflex/movies');
+        filmes.then((resposta) => {
     
-    // props.setMovieImage(listafilmes)
-    )
+            resposta.data.map( (c) => {
+                props.setMovieImage(listafilmes);
+                listafilmes.push({image: c.posterURL,id:c.id});
     
-
-
+            });
+	})}, []);
     return (
 
         <Main>
             <p>Selecione o Filme</p>
-            <Movies movieimage={listafilmes} setMovieImage = {props.setMovieImage}></Movies>
+            <Movies movieimage={listafilmes} setMovieImage = {props.setMovieImage} filmeclicado={props.filmeclicado} setFilmeClicado = {props.setFilmeClicado} id={props.id} setId={props.setId} data={props.data} setData={props.setData}></Movies>
         </Main>
     )
-// function pegarurls(resposta){
-//     console.log(resposta.data)
-//     resposta.data.map(c => 
-//         {props.setMovieImage([...props.movieimage, c.posterURL])
-//         // console.log(c.posterURL)
-//         })
-// }
-
-
-
 
 }
 const Main = styled.div`

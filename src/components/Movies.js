@@ -1,34 +1,40 @@
 import styled from "styled-components"
-
+import React from 'react'
+import axios from "axios"
+import { Link } from "react-router-dom";
 export default function Movies(props){
-    console.log(props)
+      let teste;
+  
     return(
         <Movie>
         {props.movieimage.map(f =>
-       
-            <img src={f}></img>
+        <Link to="/sessões">
+            <img id={f.id} onClick={() => {
+                props.setId(f.id)
+                const filmes=axios.get(`https://mock-api.driven.com.br/api/v8/cineflex/movies/${f.id}/showtimes`);
+                filmes.then((resposta)=>{
+                props.setData(resposta.data)})
+                
+            }} src={f.image}></img></Link>
             
             )}
         </Movie>
     )
 }
 
-// export default function movieslist(resposta){
 
-//     console.log(resposta.data[2].posterURL)
-    
-//         resposta.data.map((c) => {
-//         if (listafilmes.includes(c.posterURL)){
-    
-//         }
-//         else{
-//             listafilmes.push(c.posterURL)
-//             i=i+1
-//         }
-        
-//     })
-//         console.log(listafilmes)
-//     }
+
+
+
+
+
+
+
+
+
+
+
+
 
 const Movie = styled.div`
 margin:auto;
