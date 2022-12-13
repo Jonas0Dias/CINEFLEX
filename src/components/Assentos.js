@@ -28,7 +28,7 @@ export default function Assentos(props) {
         <AssentosPag>
         <p>Selecione um Assento</p>
        <Cadeiras>{cadeiras.map(c => 
-       <Assento c={c} disponivel ={c.isAvailable}  id={props.id} setId={props.setId} selecionados={props.selecionados} setSelecionados={props.setSelecionados}></Assento>
+       <Assento data-test='seat' c={c} disponivel ={c.isAvailable}  id={props.id} setId={props.setId} selecionados={props.selecionados} setSelecionados={props.setSelecionados}></Assento>
        
        )}</Cadeiras> 
          <Status>
@@ -39,11 +39,11 @@ export default function Assentos(props) {
     </Status>
 
     <Dados>
-        <NomeComprador><h1>Nome do Comprador:</h1><input placeholder="Digite seu Nome" type='text'  value={props.nomecomprador} onChange={e => props.setNomeComprador(e.target.value)}></input></NomeComprador>
-        <CpfComprador><h1>CPF do comprador:</h1><input placeholder="Digite seu Nome" type='number' value={props.cpfcomprador} onChange={e => props.setCpfComprador(e.target.value)}></input></CpfComprador>
+        <NomeComprador><h1>Nome do Comprador:</h1><input placeholder="Digite seu Nome" type='text' data-test='client-name' value={props.nomecomprador} onChange={e => props.setNomeComprador(e.target.value)}></input></NomeComprador>
+        <CpfComprador><h1>CPF do comprador:</h1><input placeholder="Digite seu Nome" type='number'data-test='client-cpf' value={props.cpfcomprador} onChange={e => props.setCpfComprador(e.target.value)}></input></CpfComprador>
     </Dados>
 
-    <Link to="/sucesso"><Confirmação  onClick={()=> {
+    <Link to="/sucesso"><Confirmação data-test='book-seat-btn' onClick={()=> {
         const reservarassentos = axios.post('https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many',{ids: props.selecionados , name: props.nomecomprador , cpf: props.cpfcomprador })
         reservarassentos.then(()=>console.log('tudo certo'))
     }
@@ -53,7 +53,7 @@ export default function Assentos(props) {
    
 
    
-    <Footer><div className="imagem"><img src={props.imagefooter.image}></img></div><div className="dados"><p>{props.imagefooter.title}</p><p>{props.datahorario.semana}-{props.datahorario.horario}</p></div></Footer>
+    <Footer data-test='footer'><div className="imagem"><img src={props.imagefooter.image}></img></div><div className="dados"><p>{props.imagefooter.title}</p><p>{props.datahorario.semana}-{props.datahorario.horario}</p></div></Footer>
     </>
         
     )

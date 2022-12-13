@@ -37,7 +37,7 @@ export default function Sessões(props){
         <SessõesPag>
          <h1>Selecione o Horário</h1>
          <Data id={props.id} setId={props.setId} data={props.data} imagefooter={props.imagefooter} setImageFooter={props.setImageFooter} datahorario={props.datahorario} setDataHorario={props.setDataHorario}></Data>
-         <Footer><div><img src={props.imagefooter.image}></img></div><p>{props.imagefooter.title}</p></Footer>
+         <Footer data-test='footer'><div><img src={props.imagefooter.image}></img></div><p>{props.imagefooter.title}</p></Footer>
         </SessõesPag>
         
 

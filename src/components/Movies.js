@@ -9,7 +9,7 @@ export default function Movies(props){
         <Movie>
         {props.movieimage.map(f =>
         <Link to="/sessões">
-            <img id={f.id} onClick={() => {
+            <img data-test='movie' id={f.id} onClick={() => {
                 props.setId(f.id)
                 props.setImageFooter({image: f.image, title:f.title})
                 const filmes=axios.get(`https://mock-api.driven.com.br/api/v8/cineflex/movies/${f.id}/showtimes`);

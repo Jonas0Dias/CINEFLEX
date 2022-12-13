@@ -8,12 +8,12 @@ export default function Data(props){
     return(
         
     <Sessões className="teste">
-        {props.data.days === undefined ? <p>teste se for igual a undefined</p> :  props.data.days.map(h => 
+        {props.data.days === undefined ? <p>Loading...</p> :  props.data.days.map(h => 
         
-        <Dia><p>{h.weekday} - {h.date}</p> <Horários>{h.showtimes.map(c=><Link to='/assentos' onClick={() => {
+        <Dia data-teste='movie-day'><p>{h.weekday} - {h.date}</p> <Horários >{h.showtimes.map(c=><Link to='/assentos' onClick={() => {
             props.setId(c.id)
             props.setDataHorario({data: h.date, horario:c.name, semana: h.weekday})
-        }}><button>{c.name}</button></Link>)}</Horários></Dia>
+        }}><button data-test='showtime'>{c.name}</button></Link>)}</Horários></Dia>
         
         )}
     </Sessões>

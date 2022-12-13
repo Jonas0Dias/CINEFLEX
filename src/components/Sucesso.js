@@ -7,26 +7,26 @@ export default function Sucesso(props){
     return(
         <SucessoPag><p>Pedido Feito com Sucesso!</p>
 
-        <div>
+        <div data-teste='movie-info'>
             <p>Filme e sessão</p>
             <h1>{props.imagefooter.title}</h1>
             <h1>{props.datahorario.data} {props.datahorario.horario}</h1>
             
             
         </div>
-        <div>
+        <div data-teste='seats-info'>
             <p>Ingressos</p>
             <>{props.selecionados.map(a => <h1>Assento {a}</h1>)}</>
            
         </div>
-        <div className="comprador">
+        <div data-teste='client-info' className="comprador">
 
             <p>Comprador</p>
             <h1>{props.nomecomprador}</h1>
             <h1>{props.cpfcomprador}</h1>
 
         </div>
-        <Link to ='/'><Voltar >Voltar para Home</Voltar></Link>
+        <Link data-test='go-home-btn' to ='/'><Voltar >Voltar para Home</Voltar></Link>
         </SucessoPag>
     )
 }
