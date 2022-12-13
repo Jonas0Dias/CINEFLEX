@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 
 export default function Sucesso(props){
-    console.log(props)
+    console.log(props.setSelecionados)
     return(
         <SucessoPag><p>Pedido Feito com Sucesso!</p>
 
@@ -26,7 +26,19 @@ export default function Sucesso(props){
             <h1>{props.cpfcomprador}</h1>
 
         </div>
-        <Link data-test='go-home-btn' to ='/'><Voltar >Voltar para Home</Voltar></Link>
+        <Link data-test='go-home-btn' to ='/'><Voltar onClick={()=>{
+            console.log('teste')
+            props.setMovieImage([])
+            props.setFilmeClicado([])
+            props.setId()
+            props.setImageFooter()
+            props.setDataHorario()
+            props.setData([])
+            props.setSelecionados([])
+            props.setNomeComprador()
+            props.setCpfComprador()
+
+        }}>Voltar para Home</Voltar></Link>
         </SucessoPag>
     )
 }
