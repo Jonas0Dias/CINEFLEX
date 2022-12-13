@@ -33,6 +33,7 @@ margin-left:20px;
 const Horários = styled.div`
     justify-content:start;
     display:flex;
+
 p{
     width: 82px;
     height: 43px;
@@ -41,21 +42,21 @@ p{
 }
 
 button{
+    
     background: #E8833A;
     border-radius: 3px;
     width: 83px;
     height: 43px;
     font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 21px;
-display: flex;
-justify-content:center;
-align-items: center;
-text-align: center;
-letter-spacing: 0.02em;
-
-color: #FFFFFF;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
 }
 `

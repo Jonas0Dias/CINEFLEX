@@ -10,7 +10,7 @@ export default function ScreenMovies(props) {
     React.useEffect(() => {
 		const filmes=axios.get('https://mock-api.driven.com.br/api/v8/cineflex/movies');
         filmes.then((resposta) => {
-    
+            
             resposta.data.map( (c) => {
                 props.setMovieImage(listafilmes);
                 listafilmes.push({image: c.posterURL,id:c.id, title: c.title});
@@ -40,12 +40,4 @@ p{
     font-size: 24px;
     color: #293845;
     }
-
-
 `
-
-// const Movies = styled.div`
-
-// background:blue;
-
-// `

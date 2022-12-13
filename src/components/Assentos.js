@@ -6,23 +6,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 export default function Assentos(props) {
     const [cadeiras, setCadeiras]= React.useState([])
-    console.log(props.nomecomprador)
     React.useEffect(() => 
     {const assentos = axios.get(`https://mock-api.driven.com.br/api/v8/cineflex/showtimes/${props.id}/seats`);
     assentos.then((resposta) => setCadeiras(resposta.data.seats))}, []);
 
-
-
-
-
-
-
-
-
-    // const assentos = axios.get(`https://mock-api.driven.com.br/api/v8/cineflex/showtimes/${props.id}/seats`);
-    // assentos.then((resposta) => setCadeiras(resposta.data.seats))
-    // console.log(cadeiras)
-    
     return (
         <>
         <AssentosPag>

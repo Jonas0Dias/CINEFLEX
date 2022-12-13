@@ -5,23 +5,29 @@ import React from "react";
 
 let listaselecionados=[]
 export default function Assento(props){
+
 const [selecionado, setSelecionado] = React.useState(false)
+
     return(
         <Cadeira  disponivel = {props.disponivel} selecionado={selecionado} onClick={() => {
-            console.log(props.disponivel)
+
             if(props.disponivel === true){
                 setSelecionado(!selecionado);
+
                 if (!listaselecionados.includes(props.c.name)){
                     listaselecionados = [...listaselecionados, props.c.name]
-                    props.setSelecionados(listaselecionados)
-                    console.log(listaselecionados)
-                    console.log(props.selecionados)
+                    props.setSelecionados(listaselecionados)       
                 }
+
                else {
                     listaselecionados  = listaselecionados.filter(item => item!=props.c.name)
                     props.setSelecionados(listaselecionados)
-                    console.log(listaselecionados)
                }
+
+            }
+
+            else{
+                alert('Assento não disponível')
             }
 
 
