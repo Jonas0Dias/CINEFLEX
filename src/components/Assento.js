@@ -15,10 +15,11 @@ const [selecionado, setSelecionado] = React.useState(false)
                     listaselecionados = [...listaselecionados, props.c.name]
                     props.setSelecionados(listaselecionados)
                     console.log(listaselecionados)
-                    
+                    console.log(props.selecionados)
                 }
                else {
                     listaselecionados  = listaselecionados.filter(item => item!=props.c.name)
+                    props.setSelecionados(listaselecionados)
                     console.log(listaselecionados)
                }
             }

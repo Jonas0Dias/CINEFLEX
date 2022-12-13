@@ -13,7 +13,7 @@ export default function ScreenMovies(props) {
     
             resposta.data.map( (c) => {
                 props.setMovieImage(listafilmes);
-                listafilmes.push({image: c.posterURL,id:c.id});
+                listafilmes.push({image: c.posterURL,id:c.id, title: c.title});
     
             });
 	})}, []);
@@ -21,7 +21,7 @@ export default function ScreenMovies(props) {
 
         <Main>
             <p>Selecione o Filme</p>
-            <Movies movieimage={listafilmes} setMovieImage = {props.setMovieImage} filmeclicado={props.filmeclicado} setFilmeClicado = {props.setFilmeClicado} id={props.id} setId={props.setId} data={props.data} setData={props.setData}></Movies>
+            <Movies movieimage={listafilmes} setMovieImage = {props.setMovieImage} filmeclicado={props.filmeclicado} setFilmeClicado = {props.setFilmeClicado} id={props.id} setId={props.setId} data={props.data} setData={props.setData} imagefooter={props.imagefooter} setImageFooter={props.setImageFooter}> </Movies>
         </Main>
     )
 

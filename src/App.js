@@ -11,6 +11,7 @@ function App() {
   const [filmeclicado, setFilmeClicado] = React.useState([])
   const [id, setId] = React.useState()
   const[imagefooter, setImageFooter] = React.useState()
+  const[datahorario, setDataHorario]  = React.useState()
   const [data, setData] = React.useState([])
   const [selecionados, setSelecionados] = React.useState([])
   const[nomecomprador, setNomeComprador] = React.useState()
@@ -19,10 +20,10 @@ function App() {
     <BrowserRouter>
       <Header>CINEFLIX</Header>
       <Routes>
-        <Route path="/" element={<ScreenMovies movieimage={movieimage} setMovieImage={setMovieImage} filmeclicado={filmeclicado} setFilmeClicado={setFilmeClicado} id={id} setId={setId} data={data} setData={setData} />} />
-        <Route path='/sessões' element={<Sessões filmeclicado={filmeclicado} setFilmeClicado={setFilmeClicado} id={id} setId={setId} movieimage={movieimage} setMovieImage={setMovieImage} data={data} setData={setData} />} />
-        <Route path='/assentos' element={<Assentos id={id} setId={setId} selecionados={selecionados} setSelecionados={setSelecionados} nomecomprador={nomecomprador} setNomeComprador={setNomeComprador} cpfcomprador={cpfcomprador} setCpfComprador={setCpfComprador}></Assentos>}/>
-        <Route path="/sucesso" element={<Sucesso cpfcomprador={cpfcomprador} setCpfComprador={setCpfComprador} nomecomprador={nomecomprador} setNomeComprador={setNomeComprador}></Sucesso>}/>
+        <Route path="/" element={<ScreenMovies movieimage={movieimage} setMovieImage={setMovieImage} filmeclicado={filmeclicado} setFilmeClicado={setFilmeClicado} id={id} setId={setId} data={data} setData={setData} imagefooter={imagefooter} setImageFooter={setImageFooter} />} />
+        <Route path='/sessões' element={<Sessões filmeclicado={filmeclicado} setFilmeClicado={setFilmeClicado} id={id} setId={setId} movieimage={movieimage} setMovieImage={setMovieImage} data={data} setData={setData} imagefooter={imagefooter} setImageFooter={setImageFooter} datahorario={datahorario} setDataHorario={setDataHorario}/>} />
+        <Route path='/assentos' element={<Assentos id={id} setId={setId} selecionados={selecionados} setSelecionados={setSelecionados} nomecomprador={nomecomprador} setNomeComprador={setNomeComprador} cpfcomprador={cpfcomprador} setCpfComprador={setCpfComprador} imagefooter={imagefooter} setImageFooter={setImageFooter} datahorario={datahorario} ></Assentos>}/>
+        <Route path="/sucesso" element={<Sucesso cpfcomprador={cpfcomprador} setCpfComprador={setCpfComprador} nomecomprador={nomecomprador} setNomeComprador={setNomeComprador} imagefooter={imagefooter} setImageFooter={setImageFooter} datahorario={datahorario} setDataHorario={setDataHorario} selecionados={selecionados}></Sucesso>}/>
       </Routes>
     </BrowserRouter>
   );

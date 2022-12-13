@@ -35,9 +35,9 @@ export default function Sessões(props){
 
 
         <SessõesPag>
-         <p>Selecione o Horário</p>
-         <Data id={props.id} setId={props.setId} data={props.data}></Data>
-         <Footer><img ></img>Enola Homes</Footer>
+         <h1>Selecione o Horário</h1>
+         <Data id={props.id} setId={props.setId} data={props.data} imagefooter={props.imagefooter} setImageFooter={props.setImageFooter} datahorario={props.datahorario} setDataHorario={props.setDataHorario}></Data>
+         <Footer><div><img src={props.imagefooter.image}></img></div><p>{props.imagefooter.title}</p></Footer>
         </SessõesPag>
         
 
@@ -47,6 +47,10 @@ export default function Sessões(props){
 }
 
 const Footer = styled.div`
+align-items: center;
+p{
+    margin-left:15px;
+}
 height: 117px;
 width:100%;
 bottom: 0px;
@@ -59,19 +63,50 @@ font-weight: 400;
 font-size: 26px;
 line-height: 30px;
 display: flex;
-justify-content:center;
+justify-content:start;
 color: #293845;
-
+padding: 10px 14px 10px 14px;
+ img{
+    width: 48px;
+    height: 72px;
+    position:absolute;
+    bottom: 10px;
+    left: 8px;
+ }
+ div{
+    position:relative;
+    width: 64px;
+    height: 89px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+ }
 `
 
 const SessõesPag = styled.div`
 margin-top:67px;
-margin-bottom: 130px;
+margin-bottom: 150px;
+h1{
+    margin:auto;
+    width: 374px;
+height: 110px;
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 28px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.04em;
+justify-content:center;
+color: #293845;
+}
 p{
     height:110px;
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content:start;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
