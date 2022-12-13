@@ -37,6 +37,7 @@ export default function Sessões(props){
         <SessõesPag>
          <p>Selecione o Horário</p>
          <Data id={props.id} setId={props.setId} data={props.data}></Data>
+         <Footer><img ></img>Enola Homes</Footer>
         </SessõesPag>
         
 
@@ -45,9 +46,27 @@ export default function Sessões(props){
     )
 }
 
+const Footer = styled.div`
+height: 117px;
+width:100%;
+bottom: 0px;
+position:fixed;
+background: #DFE6ED;
+border: 1px solid #9EADBA;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 26px;
+line-height: 30px;
+display: flex;
+justify-content:center;
+color: #293845;
+
+`
 
 const SessõesPag = styled.div`
 margin-top:67px;
+margin-bottom: 130px;
 p{
     height:110px;
     display: flex;
