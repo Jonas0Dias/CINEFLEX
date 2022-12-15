@@ -47,6 +47,6 @@ font-weight: 400;
 font-size: 34px;
 line-height: 40px;
 color: #E8833A;
-position:absolute;
+position:fixed;
 top:0px;
 `
