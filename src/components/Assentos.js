@@ -30,7 +30,7 @@ export default function Assentos(props) {
         <CpfComprador><h1>CPF do comprador:</h1><input placeholder="Digite seu Nome" type='number'data-test='client-cpf' value={props.cpfcomprador} onChange={e => props.setCpfComprador(e.target.value)}></input></CpfComprador>
     </Dados>
 
-    <Link to="/sucesso"><Confirmação data-test='book-seat-btn' onClick={()=> {
+    <Link style={{ textDecoration: 'none' }} to="/sucesso"><Confirmação data-test='book-seat-btn' onClick={()=> {
         const reservarassentos = axios.post('https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many',{ids: props.selecionados , name: props.nomecomprador , cpf: props.cpfcomprador })
         reservarassentos.then(()=>console.log('tudo certo'))
     }

@@ -10,7 +10,7 @@ export default function Data(props){
     <Sessões className="teste">
         {props.data.days === undefined ? <p>Loading...</p> :  props.data.days.map(h => 
         
-        <Dia data-teste='movie-day'><p>{h.weekday} - {h.date}</p> <Horários >{h.showtimes.map(c=><Link to='/assentos' onClick={() => {
+        <Dia data-teste='movie-day'><p>{h.weekday} - {h.date}</p> <Horários >{h.showtimes.map(c=><Link style={{ textDecoration: 'none' }} to='/assentos' onClick={() => {
             props.setId(c.id)
             props.setDataHorario({data: h.date, horario:c.name, semana: h.weekday})
         }}><button data-test='showtime'>{c.name}</button></Link>)}</Horários></Dia>
@@ -31,8 +31,9 @@ const Dia = styled.div`
 margin-left:20px;
 `
 const Horários = styled.div`
-    justify-content:start;
+    justify-content:space-between;
     display:flex;
+    width: 185px;
 
 p{
     width: 82px;

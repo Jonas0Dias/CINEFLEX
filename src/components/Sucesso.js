@@ -26,7 +26,7 @@ export default function Sucesso(props){
             <h1>{props.cpfcomprador}</h1>
 
         </div>
-        <Link data-test='go-home-btn' to ='/'><Voltar onClick={()=>{
+        <Link style={{ textDecoration: 'none' }} data-test='go-home-btn' to ='/'><Voltar onClick={()=>{
             console.log('teste')
             props.setMovieImage([])
             props.setFilmeClicado([])
