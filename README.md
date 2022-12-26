@@ -3,7 +3,13 @@
 Cineflix é um projeto que simula a experiência online de escolher um filme em cartaz nos cinemas.
 
 ## :wrench: Tecnologias utilizadas
-* Este projeto foi desenvolvido inteiramente em REACT.JS
+Este projeto foi desenvolvido inteiramente em REACT.JS. Algumas das ferramentas utilizadas foram:
+
+* Uso de API através da biblioteca Axios;
+* UseEffect
+* Uso de rotas através da biblioteca React Router
+* Inputs Controlados
+* Usecontext
 
 
 ## :rocket: Rodando o projeto
